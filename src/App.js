@@ -4,14 +4,32 @@ import StudentList from "./components/StudentList";
 import ClassInfo from "./components/ClassInfo";
 
 function App() {
-  const studentList = <StudentList></StudentList>;
+  const studentData = [
+    {
+      nameData: "Ada",
+      emailData: "ada@dev.org",
+    },
+    {
+      nameData: "Soo-ah",
+      emailData: "sooah@dev.org",
+    },
+    {
+      nameData: "Chrissy",
+      emailData: "chrissy@dev.org",
+    },
+  ];
+
+  const totalStudents = studentData.length;
+
+  const studentAppList = <StudentList students={studentData}></StudentList>;
+
   return (
     <div className="App">
       <main>
         <h1>Attendance</h1>
-        <ClassInfo></ClassInfo>
+        <ClassInfo numStudents={totalStudents}></ClassInfo>
 
-        {studentList}
+        {studentAppList}
       </main>
     </div>
   );

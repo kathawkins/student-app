@@ -1,12 +1,12 @@
 import React from "react";
 
-const ClassInfo = () => {
+const ClassInfo = (props) => {
   return (
     <section>
       <h2>Class Information</h2>
       <ul>
         <li>Name: Team Semicolons</li>
-        <li>Number of members: 30</li>
+        <li>Number of members: {props.numStudents}</li>
       </ul>
     </section>
   );
