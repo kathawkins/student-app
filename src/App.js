@@ -4,6 +4,8 @@ import StudentList from "./components/StudentList";
 import ClassInfo from "./components/ClassInfo";
 
 function App() {
+  // Added studentData here so that studentData props can potentially
+  // be passed to components other than StudentList
   const studentData = [
     {
       nameData: "Ada",
@@ -19,7 +21,7 @@ function App() {
     },
   ];
 
-  const totalStudents = studentData.length;
+  // const totalStudents = studentData.length;
 
   const studentAppList = <StudentList students={studentData}></StudentList>;
 
@@ -27,7 +29,7 @@ function App() {
     <div className="App">
       <main>
         <h1>Attendance</h1>
-        <ClassInfo numStudents={totalStudents}></ClassInfo>
+        {/* <ClassInfo numStudents={totalStudents}></ClassInfo> */}
 
         {studentAppList}
       </main>
