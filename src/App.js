@@ -43,28 +43,30 @@ function App() {
         return student;
       }
     });
-
     setStudentData(students);
   };
 
-  // const totalStudents = studentData.length;
+  const clearStudentsData = () => {
+    const students = [];
+    setStudentData(students);
+  };
+
+  const totalStudents = studentData.length;
 
   const studentAppList = (
     <StudentList
       students={studentData}
       onUpdateStudent={updateStudentData}
+      onClearStudents={clearStudentsData}
     ></StudentList>
   );
 
   return (
-    <div className="App">
-      <main>
-        <h1>Attendance</h1>
-        {/* <ClassInfo numStudents={totalStudents}></ClassInfo> */}
-
-        {studentAppList}
-      </main>
-    </div>
+    <main>
+      <h1>Attendance</h1>
+      <ClassInfo numStudents={totalStudents}></ClassInfo>
+      {studentAppList}
+    </main>
   );
 }
 

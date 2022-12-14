@@ -27,15 +27,9 @@ const StudentList = (props) => {
 
   return (
     <section>
+      <button onClick={props.onClearStudents}>Delete All Students</button>
       <h2 className={headingClass}>Student List</h2>
-      <ul className={listClass}>
-        {studentComponents}
-
-        {/* Will render an empty string becaues props are undefined: */}
-        {/* <li>
-          <Student></Student>
-        </li> */}
-      </ul>
+      <ul className={listClass}>{studentComponents}</ul>
     </section>
   );
 };
@@ -50,6 +44,7 @@ StudentList.propTypes = {
     })
   ),
   onUpdateStudent: PropTypes.func.isRequired,
+  onClearStudents: PropTypes.func.isRequired,
 };
 
 export default StudentList;
