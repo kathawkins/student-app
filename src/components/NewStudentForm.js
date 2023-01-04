@@ -8,6 +8,7 @@ const NewStudentForm = (props) => {
   });
 
   const onNameChange = (event) => {
+    // console.log(event);
     setFormFields({
       // spread syntax clones the original state here:
       ...formFields,
@@ -57,6 +58,7 @@ const NewStudentForm = (props) => {
         <label htmlFor="email">Email:</label>
         <input name="email" value={formFields.email} onChange={onEmailChange} />
       </div>
+      {/* can also use <button> of type='submit' */}
       <input type="submit" value="Add Student" />
     </form>
   );
